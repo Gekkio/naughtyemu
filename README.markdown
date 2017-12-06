@@ -2,6 +2,9 @@
 
 Binary version can be found [here](https://gekkio.fi/files/mooneye-gb/naughtyemu.gb).
 
+**Warning: This test ROM involves internal bus conflicts and it's entirely
+possible that it might cause damage to real hardware. Run at your own risk!!**
+
 # License and copyright
 
 Licensed under the MIT license.
