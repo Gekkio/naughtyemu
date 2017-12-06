@@ -30,7 +30,7 @@ BUILD_PATH := build
 TARGETS := $(shell find $(SRC_PATH) -type f -name '*.s' -printf '%P\n')
 SRCS := $(addprefix $(SRC_PATH)/, $(TARGETS))
 DEPS := $(addprefix $(BUILD_PATH)/, $(TARGETS:.s=.d))
-INCS := $(addprefix $(INC_PATH)/, $(shell find $(INC_PATH) -type f -name '*.i' -printf '%P\n'))
+INCS := $(addprefix $(INC_PATH)/, $(shell find $(INC_PATH) -type f -name '*.s' -printf '%P\n'))
 OBJS := $(addprefix $(BUILD_PATH)/, $(TARGETS:.s=.o))
 
 all: $(BUILD_PATH)/$(NAME).gb
@@ -63,6 +63,6 @@ clean:
 	@rm -rf $(BUILD_PATH)
 
 tags: $(SRCS) $(INCS)
-	@ctags --recurse=yes --languages=asm --langmap=asm:.s,asm:+.i $(SRC_PATH) $(INC_PATH)
+	@ctags --recurse=yes --languages=asm --langmap=asm:.s $(SRC_PATH) $(INC_PATH)
 
 .PHONY: clean all check tags force

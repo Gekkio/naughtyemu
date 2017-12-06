@@ -18,8 +18,8 @@
 ; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ; SOFTWARE.
 
-.include "config.i"
-.include "hardware.i"
+.include "config.s"
+.include "hardware.s"
 
 .bank 1 slot 1
 .section "Runtime" free
